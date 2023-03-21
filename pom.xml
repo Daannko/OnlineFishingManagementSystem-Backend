@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>Spring-Base</artifactId>
+    <artifactId>Online-Fishing-Management-System</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Spring-Base</name>
+    <name>Online-Fishing-Management-System</name>
     <description>Base for a spring web app</description>
     <properties>
         <java.version>11</java.version>
