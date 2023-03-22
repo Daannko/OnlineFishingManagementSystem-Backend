@@ -29,6 +29,14 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<Role> roles;
 
+    @ManyToMany
+    @JoinTable(
+            name = "users_catches",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "catch_id"))
+
+    private List<Catch> catches;
+
     private String name;
 
     private String surname;
