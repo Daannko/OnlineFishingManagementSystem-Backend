@@ -1,4 +1,4 @@
-package com.example.SpringBase.models;
+package com.example.ofms.models;
 
 import org.springframework.security.core.GrantedAuthority;
 

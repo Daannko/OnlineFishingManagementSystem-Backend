@@ -1,6 +1,6 @@
-package com.example.SpringBase;
+package com.example.ofms;
 
-import com.example.SpringBase.models.User;
+import com.example.ofms.models.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

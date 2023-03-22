@@ -1,8 +1,8 @@
-package com.example.SpringBase.configuration;
+package com.example.ofms.configuration;
 
-import com.example.SpringBase.models.Role;
-import com.example.SpringBase.models.User;
-import com.example.SpringBase.repositories.UserRepository;
+import com.example.ofms.models.Role;
+import com.example.ofms.models.User;
+import com.example.ofms.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;

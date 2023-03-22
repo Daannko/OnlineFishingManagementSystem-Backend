@@ -1,4 +1,4 @@
-package com.example.SpringBase;
+package com.example.ofms;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,12 +1,12 @@
-package com.example.SpringBase.controlers;
+package com.example.ofms.controlers;
 
-import com.example.SpringBase.JwtUtil;
-import com.example.SpringBase.dto.LoginRequest;
-import com.example.SpringBase.dto.LoginResponse;
-import com.example.SpringBase.dto.MessageResponse;
-import com.example.SpringBase.dto.RegisterRequest;
-import com.example.SpringBase.models.User;
-import com.example.SpringBase.services.UserService;
+import com.example.ofms.JwtUtil;
+import com.example.ofms.dto.LoginRequest;
+import com.example.ofms.dto.LoginResponse;
+import com.example.ofms.dto.MessageResponse;
+import com.example.ofms.dto.RegisterRequest;
+import com.example.ofms.models.User;
+import com.example.ofms.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
-import static com.example.SpringBase.models.Role.ROLE_USER;
+import static com.example.ofms.models.Role.ROLE_USER;
 
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")

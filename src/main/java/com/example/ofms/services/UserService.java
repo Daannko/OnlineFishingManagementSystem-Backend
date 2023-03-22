@@ -1,7 +1,7 @@
-package com.example.SpringBase.services;
+package com.example.ofms.services;
 
-import com.example.SpringBase.models.User;
-import com.example.SpringBase.repositories.UserRepository;
+import com.example.ofms.models.User;
+import com.example.ofms.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,4 +1,4 @@
-package com.example.SpringBase.controlers;
+package com.example.ofms.controlers;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

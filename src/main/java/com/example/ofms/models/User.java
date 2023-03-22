@@ -1,4 +1,5 @@
-package com.example.SpringBase.models;
+package com.example.ofms.models;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,8 +31,6 @@ public class User {
     private List<Role> roles;
 
     private String name;
-
     private String surname;
-
     private boolean verified;
 }

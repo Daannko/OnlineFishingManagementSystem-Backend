@@ -1,6 +1,6 @@
-package com.example.SpringBase.dto;
+package com.example.ofms.dto;
 
-import com.example.SpringBase.models.Role;
+import com.example.ofms.models.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
