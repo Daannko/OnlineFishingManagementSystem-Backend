@@ -1,11 +1,11 @@
 package com.example.ofms.models;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.List;
 
 
@@ -29,17 +29,7 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<Role> roles;
 
-    @ManyToMany
-    @JoinTable(
-            name = "users_catches",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "catch_id"))
-
-    private List<Catch> catches;
-
     private String name;
-
     private String surname;
-
     private boolean verified;
 }

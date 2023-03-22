@@ -6,9 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity(name = "fishes")
 @Data
@@ -19,15 +17,14 @@ public class Fish {
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-    @Column
+    private Long userId;
     private String species;
-    @Column
     private double length;
-    @Column
     private double weight;
-    @Column
     private boolean taken;
-
+    @ManyToOne
+    @JoinColumn(name = "catch_id")
+    private Catch aCatch;
 
 
 

@@ -6,7 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,18 +17,18 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Catch {
+
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-    @ManyToMany
-    @JoinTable(
-            name = "cought_fishes",
-            joinColumns = @JoinColumn(name = "catch_id"),
-            inverseJoinColumns = @JoinColumn(name = "fish_id"))
-    private List<Fish> fish;// in inches or centimeters
+    private Long userId;
+    private Long lakeId;
     private Date dateTime;
-    private String location;
-    private String bait;
-
+    @OneToMany(
+            mappedBy = "aCatch",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Fish> fishes = new ArrayList<>();
 
 }

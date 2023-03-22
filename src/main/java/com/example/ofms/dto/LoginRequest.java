@@ -1,9 +1,8 @@
 package com.example.ofms.dto;
 
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import javax.validation.constraints.Email;
 
 
 @Data
