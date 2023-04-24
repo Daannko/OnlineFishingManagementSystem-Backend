@@ -32,6 +32,6 @@ public class AuthController {
 
     @GetMapping("/user")
     public ResponseEntity<User> getUser(){
-        return ResponseEntity.ok(authService.getUserFromToken());
+        return ResponseEntity.ok(authService.getUserFromContext());
     }
 }

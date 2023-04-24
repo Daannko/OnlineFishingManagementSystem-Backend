@@ -27,7 +27,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/auth/**","/user/all") //!!!!!!!!!!!!!!!!
+                .requestMatchers( "/catch","/auth/**","/user/all") //!!!!!!!!!!!!!!!!
                 .permitAll() // allow all endpoints abowe to be permited
                 .anyRequest()
                 .authenticated() // rest request have to be authenticated

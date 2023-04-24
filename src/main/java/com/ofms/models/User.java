@@ -8,7 +8,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -30,10 +29,7 @@ public class User implements UserDetails {
     private String password;
     private String name;
     private String surname;
-    private Date createdAt;
-    private Date editedAt;
     private boolean verified;
-    private boolean tokenExpired;
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -81,6 +77,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return this.verified;
     }
 }

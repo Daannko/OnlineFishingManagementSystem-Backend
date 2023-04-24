@@ -33,15 +33,10 @@ public class AuthService {
                 .surname(request.getSurname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .createdAt(date)
-                .editedAt(date)
-                .verified(false)
+                .verified(true)
                 .role(Role.USER)
-                .tokenExpired(false)
                 .build();
-
         userRepository.save(newUser);
-
         return AuthResponse.builder()
                 .token(jwtService.generateToken(newUser))
                 .build();
@@ -59,7 +54,8 @@ public class AuthService {
                 .token(jwtService.generateToken(user))
                 .build();
     }
-    public User getUserFromToken(){
+
+    public User getUserFromContext(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
         if (principal instanceof UserDetails) {
