@@ -1,6 +1,7 @@
 package com.ofms.models;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,10 +21,12 @@ public class Catch {
 
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private Long userId;
     private Long lakeId;
     private Date dateTime;
+    @JsonManagedReference
     @OneToMany(
             mappedBy = "aCatch",
             cascade = CascadeType.ALL,

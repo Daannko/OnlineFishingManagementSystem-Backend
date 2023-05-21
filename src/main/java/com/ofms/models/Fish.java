@@ -1,6 +1,7 @@
 package com.ofms.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,7 @@ import jakarta.persistence.*;
 public class Fish {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private Long userId;
     private String species;
@@ -24,6 +26,7 @@ public class Fish {
     private boolean taken;
     @ManyToOne
     @JoinColumn
+    @JsonBackReference
     private Catch aCatch;
 
 

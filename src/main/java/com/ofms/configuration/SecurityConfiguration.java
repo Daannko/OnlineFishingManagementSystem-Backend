@@ -18,7 +18,6 @@ public class SecurityConfiguration {
     private final JwtAuthFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
@@ -26,8 +25,9 @@ public class SecurityConfiguration {
         http
                 .csrf()
                 .disable()
+                .cors().disable()
                 .authorizeHttpRequests()
-                .requestMatchers( "/catch","/auth/**","/user/all") //!!!!!!!!!!!!!!!!
+                .requestMatchers( "/auth/**","/user/all") //!!!!!!!!!!!!!!!!
                 .permitAll() // allow all endpoints abowe to be permited
                 .anyRequest()
                 .authenticated() // rest request have to be authenticated

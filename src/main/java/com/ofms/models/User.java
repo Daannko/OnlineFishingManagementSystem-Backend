@@ -21,7 +21,8 @@ import java.util.Objects;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
+    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Column(unique = true, nullable = false)
     private String email;

@@ -16,8 +16,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -27,7 +25,7 @@ public class AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
     public AuthResponse register(RegisterRequest request) {
-        Date date = new Date();
+
         var newUser = User.builder()
                 .name(request.getName())
                 .surname(request.getSurname())
@@ -43,6 +41,9 @@ public class AuthService {
     }
 
     public AuthResponse authenticate(AuthRequest request) {
+
+        System.out.println("lol");
+
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
