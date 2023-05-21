@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("test")
 @AllArgsConstructor
-@CrossOrigin("*")
+/*@CrossOrigin("*")*/
 public class TestController {
 
 

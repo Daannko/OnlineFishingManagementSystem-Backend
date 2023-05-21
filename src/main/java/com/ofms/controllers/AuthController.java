@@ -2,6 +2,7 @@ package com.ofms.controllers;
 
 import com.ofms.dto.AuthRequest;
 import com.ofms.dto.AuthResponse;
+import com.ofms.dto.LoginResponse;
 import com.ofms.dto.RegisterRequest;
 import com.ofms.models.User;
 import com.ofms.services.AuthService;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("auth")
-@CrossOrigin("*")
 public class AuthController {
 
     private final AuthService authService;
@@ -27,7 +27,7 @@ public class AuthController {
 
     //You can use this as login
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthResponse> authenticate(@RequestBody AuthRequest request){
+    public ResponseEntity<LoginResponse> authenticate(@RequestBody AuthRequest request){
         return ResponseEntity.ok(authService.authenticate(request));
     }
 

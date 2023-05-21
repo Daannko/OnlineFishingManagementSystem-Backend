@@ -3,6 +3,7 @@ package com.ofms.services;
 import com.ofms.configuration.JwtService;
 import com.ofms.dto.AuthRequest;
 import com.ofms.dto.AuthResponse;
+import com.ofms.dto.LoginResponse;
 import com.ofms.dto.RegisterRequest;
 import com.ofms.models.Role;
 import com.ofms.models.User;
@@ -40,7 +41,7 @@ public class AuthService {
                 .build();
     }
 
-    public AuthResponse authenticate(AuthRequest request) {
+    public LoginResponse authenticate(AuthRequest request) {
 
         System.out.println("lol");
 
@@ -51,8 +52,14 @@ public class AuthService {
                 )
         );
         var user = userRepository.findByEmail(request.getEmail()).orElseThrow();
-        return AuthResponse.builder()
+        return LoginResponse.builder()
                 .token(jwtService.generateToken(user))
+                .id(user.getId())
+                .username(user.getEmail())
+                .name(user.getName())
+                .surname(user.getSurname())
+                .role(user.getRole())
+                .verified(user.isVerified())
                 .build();
     }
 
