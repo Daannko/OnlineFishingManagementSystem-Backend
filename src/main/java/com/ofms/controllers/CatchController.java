@@ -19,7 +19,10 @@ public class CatchController {
     private final AuthService authService;
     @PostMapping()
     public ResponseEntity<Catch> reportACatch(@RequestBody AddCatchRequest addCatchRequest){
-        return ResponseEntity.ok(catchService.addCatch(addCatchRequest));
+
+        Catch aCatch = catchService.addCatch(addCatchRequest);
+
+        return ResponseEntity.ok(aCatch);
     }
 
     @GetMapping("/user")

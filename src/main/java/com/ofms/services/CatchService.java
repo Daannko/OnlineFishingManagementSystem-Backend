@@ -27,16 +27,21 @@ public class CatchService {
                 .lakeId((long) addCatchRequest.getLakeId())
                 .build();
 
-        catchRepository.save(newCatch);
+        newCatch = catchRepository.save(newCatch);
 
         List<Fish> fishes = new ArrayList<>();
         for(Fish f: addCatchRequest.getFishes()){
             f.setACatch(newCatch);
             f.setUserId(newCatch.getUserId());
-            fishes.add(fishService.save(f));
+            f.setDate(newCatch.getDateTime());
+            Fish fish = fishService.save(f);
+            fishes.add(fish);
         }
         newCatch.setFishes(fishes);
-        return catchRepository.save(newCatch);
+
+        Catch aCatch = catchRepository.save(newCatch);
+
+        return aCatch;
     }
 
     public List<Catch> getUsersCatches(Long id){

@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 @Data
 public class LoginResponse {
-    private String id;
+    private Long id;
     private String username;
     private String name;
     private String surname;

@@ -25,7 +25,6 @@ public class Lake {
     private String waterQuality;
     private Double averageTemperature;
     private Double phLevel;
-    @Column(nullable = false)
     private Double lat,lng;
 
 

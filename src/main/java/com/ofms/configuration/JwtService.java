@@ -19,7 +19,7 @@ public class JwtService {
 
     //TODO: change it so it will be secure for example store in difrent file only load here
     private static final String SECRET_KEY = "3273357638782F413F4428472B4B6250655368566D597133743677397A244226";
-    private static final Long EXPIRATION_TIME = 1000L * 60 * 24;
+    private static final Long EXPIRATION_TIME = 1000L * 60 * 24 * 1000;
 
     public String extractUsername(String token) {
         return extractClaim(token,Claims::getSubject);

@@ -1,13 +1,14 @@
 package com.ofms.models;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*;
+import java.util.Date;
 
 @Entity(name = "fishes")
 @Data
@@ -24,9 +25,10 @@ public class Fish {
     private double length;
     private double weight;
     private boolean taken;
+    private Date date;
+    @JsonIgnore
     @ManyToOne
     @JoinColumn
-    @JsonBackReference
     private Catch aCatch;
 
 
