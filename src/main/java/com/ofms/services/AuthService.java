@@ -42,9 +42,6 @@ public class AuthService {
     }
 
     public LoginResponse authenticate(AuthRequest request) {
-
-        System.out.println("lol");
-
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
