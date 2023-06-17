@@ -31,7 +31,7 @@ public class CatchService {
 
         List<Fish> fishes = new ArrayList<>();
         for(Fish f: addCatchRequest.getFishes()){
-            f.setACatch(newCatch);
+            f.setaCatch(newCatch);
             f.setUserId(newCatch.getUserId());
             f.setDate(newCatch.getDateTime());
             Fish fish = fishService.save(f);

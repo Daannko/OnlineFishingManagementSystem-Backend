@@ -1,6 +1,8 @@
 package com.ofms.models;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +15,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity(name = "catches")
-@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,6 +26,7 @@ public class Catch {
     private Long id;
     private Long userId;
     private Long lakeId;
+    @JsonIgnore
     private Date dateTime;
     @JsonManagedReference
     @OneToMany(
@@ -34,4 +36,43 @@ public class Catch {
     )
     private List<Fish> fishes = new ArrayList<>();
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getLakeId() {
+        return lakeId;
+    }
+
+    public void setLakeId(Long lakeId) {
+        this.lakeId = lakeId;
+    }
+
+    public Date getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(Date dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public List<Fish> getFishes() {
+        return fishes;
+    }
+
+    public void setFishes(List<Fish> fishes) {
+        this.fishes = fishes;
+    }
 }

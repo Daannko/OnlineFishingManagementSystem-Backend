@@ -44,7 +44,7 @@ public class FishService {
         return fishes.getContent().stream().map(e -> {
             AllFishResponse allFishResponse = new AllFishResponse();
             User user = userRepository.getReferenceById(e.getUserId());
-            lakeRepository.findById(e.getACatch().getLakeId()).ifPresent(lake -> allFishResponse.setLakeName(lake.getName()));
+            lakeRepository.findById(e.getaCatch().getLakeId()).ifPresent(lake -> allFishResponse.setLakeName(lake.getName()));
             allFishResponse.setUserNameAndSurname(user.getName() + " " + user.getSurname());
             allFishResponse.setFish(e);
             return allFishResponse;
