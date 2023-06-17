@@ -14,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -51,4 +52,8 @@ public class FishService {
 
     }
 
+    public Fish getById(Long id) {
+        Optional<Fish> optional = fishRepository.findById(id);
+        return optional.orElse(null);
+    }
 }
